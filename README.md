@@ -1,4 +1,4 @@
-# Data Analysis Project 
+# Data Analysis Project using SQL
 > This project is for a fake movie rental company: Rockbuster Stealth LLC
 >
 > Rockbuster Stealth LLC is a movie rental company that used to have stores around the
