@@ -6,8 +6,7 @@ Query to find films with a title that contains the word Uptown in any position
 
 SELECT film_id, title, description
 FROM film
-WHERE title LIKE '%Uptown%'ntal_rate > 2.99
-ORDER BY length ASC
+WHERE title LIKE '%Uptown%'
 
 
 Query to find films with a length that is more than 120 minutes and have a rental rate that is more than 2.99
