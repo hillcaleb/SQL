@@ -16,7 +16,3 @@ In your capacity as a data analyst at Rockbuster Stealth, you're responsible for
 - Which countries are Rockbuster customers based in?
 - Where are customers with a high lifetime value based?
 - Do sales figures vary between geographic regions?
-
-## Folders
-
--
