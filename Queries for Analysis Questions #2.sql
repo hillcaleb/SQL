@@ -4,8 +4,7 @@
 
   
     SELECT AVG(total_paid)
-    FROM (SELECT PAY.customer_id, first_name, last_name, city, country, SUM(amount) AS
-    total_paid
+    FROM (SELECT PAY.customer_id, first_name, last_name, city, country, SUM(amount) AS total_paid
     FROM payment PAY
     INNER JOIN customer CUST ON PAY.customer_id = CUST.customer_id
     INNER JOIN address ADDR ON CUST.address_id = ADDR.address_id
