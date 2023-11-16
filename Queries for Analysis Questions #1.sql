@@ -1,7 +1,7 @@
-This file has some queries looking for answers to the key questions
+/*This file has some queries looking for answers to the key questions
 
 
-Finding the top 10 countries for Rockbuster in terms of customer numbers. 
+Finding the top 10 countries for Rockbuster in terms of customer numbers.*/
 
  -  SELECT D.country,
     COUNT (customer_id) AS count_of_customers
@@ -13,9 +13,9 @@ Finding the top 10 countries for Rockbuster in terms of customer numbers.
     ORDER BY COUNT (customer_id) DESC
     LIMIT 10
 
-Identifying the top 10 cities that fall within the top 10 countries I identified in the previous query.
+/*Identifying the top 10 cities that fall within the top 10 countries I identified in the previous query.
 
-  - Creating a temporay table of the previous output 
+  - Creating a temporay table of the previous output */
     SELECT country, COUNT (customer_id) AS count_of_customers into temp table top_ten_country
     FROM customer A
     INNER JOIN address B ON A.address_id = B.address_id
@@ -25,7 +25,7 @@ Identifying the top 10 cities that fall within the top 10 countries I identified
     ORDER BY COUNT (customer_id) DESC
     LIMIT 10
 
-  - 
+  
     SELECT country, city, COUNT (customer_id) AS count_of_customers
     FROM customer A
     INNER JOIN address B ON A.address_id = B.address_id
@@ -37,9 +37,9 @@ Identifying the top 10 cities that fall within the top 10 countries I identified
     LIMIT 10
 
 
-Finding the top 5 customers in the top 10 cities (previous output)
+/*Finding the top 5 customers in the top 10 cities (previous output)*/
 
-  - Creating a temporary table of the top 10 cities
+    Creating a temporary table of the top 10 cities
     SELECT country, city, COUNT (customer_id) AS count_of_customers INTO TEMP TABLE ten_top_cities
     FROM customer A
     INNER JOIN address B ON A.address_id = B.address_id
@@ -50,7 +50,7 @@ Finding the top 5 customers in the top 10 cities (previous output)
     ORDER BY COUNT (customer_id) DESC
     LIMIT 10
 
-  -
+  
     SELECT A.customer_id, first_name, last_name, city, country, SUM(amount) AS total_paid
     FROM payment A
     INNER JOIN customer B ON A.customer_id = B.customer_id
