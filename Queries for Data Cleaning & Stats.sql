@@ -1,19 +1,19 @@
-Data Cleaning
+/*Data Cleaning
 
 - Looked for Non-Uniform data
-  with the following query:
+  with the following query:*/
 
   SELECT DISTINCT *
   FROM film
   SELECT DISTINCT *
   FROM customer
 
-  It was all uniform but if they weren’t I would use UPDATE and SET to fix values that weren’t
-  the same.
+  /*It was all uniform but if they weren’t I would use UPDATE and SET to fix values that weren’t
+  the same.*/
 
 
-- Looked for Missing Values 
-  with the following query:
+  /*Looked for Missing Values 
+  with the following query:*/
 
   SELECT *
   FROM film
@@ -22,14 +22,14 @@ Data Cleaning
   FROM customer
   WHERE customer.* IS NULL
 
-  There were no missing values but if there were I would determine if should either replace
-  them with the average, or leave out the column all together depending on how many values
+  /*There were no missing values but if there were I would determine if I should either replace
+  them with the average, or leave out the column altogether depending on how many values
   were missing.
 
 
-Calulating descriptive statistics for the film table and customer table
+Calculating descriptive statistics for the film table and customer table
 
-- Query for the film table statistics:
+- Query for the film table statistics:*/
 
   SELECT MIN(film_id) AS minimum_film_id,
   MAX(film_id) AS maximun_film_id,
@@ -61,7 +61,7 @@ Calulating descriptive statistics for the film table and customer table
   COUNT (*) AS count_rows
   FROM film
 
-- Query for the customer table statistics
+  /*Query for the customer table statistics*/
   SELECT MODE() WITHIN GROUP (ORDER BY customer_id) AS mode_of_customer_id,
   MODE () WITHIN GROUP(ORDER BY store_id) AS mode_of_store_id,
   MODE () WITHIN GROUP (ORDER BY first_name) AS mode_of_first_name,
